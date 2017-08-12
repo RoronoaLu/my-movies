@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>jsonp封装</title>
+</head>
+
+<body>
+    <script>
+        /* function myJsonp(url, arg, fun) {
+
+                    //创建 script
+                    var script = document.createElement('script');
+                    //设置 src 属性
+                    var querystring = '';
+                    for (var key in arg) {
+                        querystring += key + '=' + arg[key] + '&';
+                    }
+
+                    //防止用户名 冲突 
+                    var funcName = 'myJsonp' + Math.random().toString().substr(2);//substr() 是可以从字符串中可以抽取下标指定数目的字符
+
+                    url += '?' + querystring + 'callback = funcName';
+
+                    window[funcName] = function (data) {
+
+                        fun(data);
+                    }
+
+                    script.src = url;
+                    //将script 标签 添加到 body 中
+                    document.body.appendChild(script);
+                };
+         */
+
+
+        /*  function myJson(url,arg,fun){
+
+             //创建 script 标签
+             var script = document.createElement('script');
+             //设置 src 属性
+             var qustring = '';
+             for(var k in arg){
+                 qustring += k +'='+arg[k] + '&';
+             }
+
+             //防止出现 用户名 冲突的情况 
+             var fnName = 'mjsonp'+Math.random().toString().substr(2);
+             url+= '?'+qustring + 'callback = fnName';
+             window[fnName] = function(data){
+                 fn(data);
+             }
+
+             script.src = url;
+             document.body.appendChild(script);
+         } */
+
+
+        //封装 jsonp  有 三个参数 一个是 url 第二个是 参数 第三个是 回调函数
+        function myJson(url, arg, fun) {
+            // 1、创建一个 script 标签
+            var script = document.createElement('script');
+            //设置 src 
+            var str = '';
+            //遍历 
+            for (var k in arg) {
+                str += k + '=' + arg[k] + '&';
+            }
+            //防止出现 函数名 重复的情况 所以 要进行 下面的 处理
+            var funNamne = 'myJson' + Math.random().toString().substr(2); // 可以 抽取 下面制定的字符
+            url += '?' + str + 'callback=' + funName;
+            window.src = url;
+            //将 script 标签 添加到 body 中 
+            document.body.appendChild(script);
+        }
+    </script>
+</body>
+
+</html>

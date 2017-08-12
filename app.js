@@ -1,0 +1,12 @@
+(function (angular) {
+    // "use strict";
+
+    // start your ride
+    var app = angular.module('main',[
+        'home',
+        'details',
+        'movie_list',
+        'auto-active']);
+
+
+})(angular);
